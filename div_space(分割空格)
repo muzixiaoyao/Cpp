@@ -1,0 +1,25 @@
+#include <sstream>
+#include <string>
+#include <vector>
+
+typedef std::vector<std::string> VSTRING;
+VSTRING div_space(std::string word);
+
+int main(int argc, char* argv[])
+{
+	using namespace std;
+  VSTRING aa = div_space("asd fdfa asdf");
+	cout << aa[1];
+	return 0;
+}
+
+VSTRING div_space(std::string word)
+{
+	using namespace std;
+	string result;
+	VSTRING res;
+	stringstream input(word);
+	while (input >> result)
+		res.push_back(result);
+	return res;
+}
